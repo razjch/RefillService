@@ -22,7 +22,7 @@ namespace RefillService.Repository
         public RefillOrder RequestAdhocRefill(SubscriptionDTO subscriptionDTO)
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost:9090");
+            client.BaseAddress = new Uri("http://20.106.26.153");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", subscriptionDTO.Token);
 
             //StringContent content = new StringContent(JsonConvert.SerializeObject(""), Encoding.UTF8, "application/json");
