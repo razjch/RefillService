@@ -10,7 +10,8 @@ WORKDIR /src
 COPY *.csproj ./
 RUN dotnet restore 
 COPY . ./
-WORKDIR "/src"RUN dotnet build "RefillService.csproj" -c Release -o /app/build
+WORKDIR "/src"
+RUN dotnet build "RefillService.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "RefillService.csproj" -c Release -o /app/publish
